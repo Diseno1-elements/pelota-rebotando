@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bouncing Horror</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000;
+            height: 100vh;
+            position: relative;
+        }
+        
+        .scary-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Creepster', cursive;
+            font-size: 4em;
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000;
+            animation: flash 1.5s infinite;
+            z-index: 2;
+        }
+
+        .ball {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            position: absolute;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            background: #ff0000;
+        }
+
+        .ball:nth-of-type(1) { animation-name: bounce1; animation-delay: 2.5s}
+        .ball:nth-of-type(2) { animation-name: bounce2; animation-delay: 1s; }
+        .ball:nth-of-type(3) { animation-name: bounce3; animation-delay: 1.5s; }
+        .ball:nth-of-type(4) { animation-name: bounce4; animation-delay: 2s; }
+        .ball:nth-of-type(5) { animation-name: bounce5; animation-delay: 2.5s; }
+
+        @keyframes flash {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.2; text-shadow: 0 0 20px #ff0000; }
+        }
+
+        @keyframes bounce1 {
+            0%, 100% { transform: translate(0, 90vh); }
+            50% { transform: translate(90vw, 0); }
+        }
+
+        @keyframes bounce2 {
+            0%, 100% { transform: translate(90vw, 0); }
+            50% { transform: translate(0, 90vh); }
+        }
+
+        @keyframes bounce3 {
+            0%, 100% { transform: translate(0, 90vh); }
+            50% { transform: translate(90vw, 0); }
+        }
+
+        @keyframes bounce4 {
+            0%, 100% { transform: translate(45vw, 0); }
+            50% { transform: translate(45vw, 90vh); }
+        }
+
+        @keyframes bounce5 {
+            0%, 100% { transform: translate(0, 45vh); }
+            50% { transform: translate(90vw, 45vh); }
+        }
+
+        .link {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff0000;
+            font-family: 'Creepster', cursive;
+            text-decoration: none;
+            font-size: 1.2em;
+            text-shadow: 0 0 5px #ff0000;
+            transition: 0.3s;
+        }
+
+        .link:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="scary-text">ARE YOU BOUNCING?!</div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <a href="https://topsy-technologies-r4jn6h6.gamma.site/" class="link">ENTER THE DARKNESS...</a>
+</body>
+</html>
